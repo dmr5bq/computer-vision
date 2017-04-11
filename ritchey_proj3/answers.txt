@@ -1,0 +1,168 @@
+Q #1. What is the test set accuracy?
+
+    Test loss: 0.0988621018832
+    Test accuracy: 0.9817
+
+---
+
+Q #2: What is the confusion matrix after normalization?
+
+    [[ 968    0    1    1    3    0    3    1    3    0]
+     [   0 1125    2    1    0    1    2    1    3    0]
+     [   3    0 1008    4    2    0    2    4    8    1]
+     [   0    0    0  999    0    3    0    3    3    2]
+     [   1    0    2    1  969    0    3    2    0    4]
+     [   2    0    0    8    0  874    3    1    3    1]
+     [   4    2    1    1    4    5  939    0    2    0]
+     [   1    3    9    1    2    0    0 1003    4    5]
+     [   0    0    2    2    4    3    0    2  957    4]
+     [   0    3    0    3   11    2    0    5    1  984]]
+
+     -->
+
+     [[  9.91836667e-01   1.02040812e-03   0.00000000e+00   1.02040812e-03
+        2.04081624e-03   1.02040812e-03   2.04081624e-03   1.02040812e-03
+        0.00000000e+00   0.00000000e+00]
+     [  0.00000000e+00   9.91189480e-01   1.76211458e-03   8.81057291e-04
+        0.00000000e+00   8.81057291e-04   1.76211458e-03   8.81057291e-04
+        2.64317193e-03   0.00000000e+00]
+     [  1.93798449e-03   0.00000000e+00   9.79651153e-01   5.81395347e-03
+        1.93798449e-03   0.00000000e+00   1.93798449e-03   2.90697673e-03
+        4.84496122e-03   9.68992244e-04]
+     [  0.00000000e+00   0.00000000e+00   1.98019808e-03   9.87128735e-01
+        0.00000000e+00   1.98019808e-03   0.00000000e+00   3.96039616e-03
+        1.98019808e-03   2.97029712e-03]
+     [  1.01832999e-03   0.00000000e+00   2.03665998e-03   0.00000000e+00
+        9.83706772e-01   0.00000000e+00   4.07331996e-03   1.01832999e-03
+        0.00000000e+00   8.14663991e-03]
+     [  2.24215258e-03   0.00000000e+00   0.00000000e+00   1.34529155e-02
+        1.12107629e-03   9.76457477e-01   3.36322887e-03   0.00000000e+00
+        2.24215258e-03   1.12107629e-03]
+     [  4.17536544e-03   2.08768272e-03   1.04384136e-03   1.04384136e-03
+        5.21920668e-03   3.13152419e-03   9.81210887e-01   0.00000000e+00
+        2.08768272e-03   0.00000000e+00]
+     [  0.00000000e+00   4.86381305e-03   1.16731515e-02   9.72762646e-04
+        1.94552529e-03   0.00000000e+00   0.00000000e+00   9.73735392e-01
+        2.91828788e-03   3.89105058e-03]
+     [  5.13347052e-03   1.02669408e-03   4.10677632e-03   4.10677632e-03
+        4.10677632e-03   3.08008213e-03   1.02669408e-03   3.08008213e-03
+        9.69199240e-01   5.13347052e-03]
+     [  1.98216061e-03   2.97324080e-03   0.00000000e+00   4.95540164e-03
+        5.94648160e-03   9.91080306e-04   0.00000000e+00   1.98216061e-03
+        2.97324080e-03   9.78196263e-01]]
+---
+
+Q #3: Also, which digits have the highest and lowest entries along the diagonal?
+
+    5 has the lowest value along the diagonal
+
+    2 has the highest value along the diagonal
+
+---
+
+Q #4: For the worst performing digit, which other digit is it most often confused with?
+
+    Real 5s are most often confused with 3s
+
+---
+
+Q #5: What might be the explanation for the digit that performs best and worst?
+
+    5 and 3 share similar features, especially when handwritten and so the model may have issues
+    in determining the difference in this shared feature set.
+
+---
+
+Q #6: What is the test accuracy of this network?
+
+    Test loss: 0.117930038879
+    Test accuracy: 0.9818
+
+---
+
+Q #7: What is the test accuracy of this network?
+
+    Test loss: 0.138708119059
+    Test accuracy: 0.9791
+
+---
+
+Q #8: What is the new confusion matrix?
+
+    [[ 970    1    1    1    1    1    2    1    2    0]
+     [   0 1127    2    1    0    1    1    1    2    0]
+     [   2    2 1015    2    1    0    2    2    6    0]
+     [   1    0    4  993    0    4    0    3    0    5]
+     [   1    0    2    0  964    0    4    2    1    8]
+     [   2    0    0    5    2  877    2    2    1    1]
+     [   4    2    3    1    6   10  931    1    0    0]
+     [   1    5    7    1    2    0    0 1002    3    7]
+     [   1    0    5    4    3    2    0    2  952    5]
+     [   0    2    0    1    5    3    1    4    4  989]]
+
+---
+
+Q #9: Which of the above three networks performed best at test time, and why?
+
+    The network with 2 hidden layers of 16 neurons, though only barely.
+
+    It's likely that the model with no hidden layers was underfitting and the model with large
+    hidden layers was overfitting and thus did not perform as well.
+
+---
+
+Q #10: If you change the loss from cross entropy to L2 (in Keras this is called 'mean_squared_error'), is the result better or worse?
+
+
+    Test loss: 0.0880340382241
+    Test accuracy: 0.9824
+
+    The result is BETTER than the cross-entropy one.
+
+---
+
+
+Q #11: What are the test accuracies and training times for the above three classifiers?
+
+    Part 1:
+
+    Test loss: 0.126036258559
+    Test accuracy: 0.9634
+
+    Total runtime: 374s
+
+    -
+    Part 2:
+
+    Test loss: 0.0605349446099
+    Test accuracy: 0.9818
+
+    Total runtime: 789s
+
+    -
+    Part 3:
+
+    Test loss: 0.0403817192306
+    Test accuracy: 0.987
+
+    Total runtime: 2922s
+
+---
+
+Q #12: For debugging purposes, you can lower the number of training and validation samples by a factor of say 20,
+       and run for 1 epoch. What accuracy do you obtain, and why?
+
+     I got about 53% accuracy for 1 epoch having frozen 19 layers of the base model. The low accuracy probably comes
+     from the fact that the model is only trained on 5 images and so the sigmoid neuron doesn't have adequate
+     input to properly learn.
+
+---
+
+Q #13: If you fine-tune for 1 or 2 epochs using the original number of training and validation samples, what accuracy do you obtain,
+        and why? Does your saved model file now work better with your testing utility?
+
+         val_loss: 0.1868
+         val_acc: 0.9437
+
+         The model works even better on testing my own known images that I got of cats and dogs.
+         It was given a lot more time to train and more samples to run so the model is far more accurate for all images now.

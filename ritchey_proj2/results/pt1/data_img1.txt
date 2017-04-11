@@ -1,0 +1,7 @@
+Image 1 is 288px x 198px in size
+
+The RMS error for bilateral filtering is 11.3860854899
+The RMS error for gaussian filtering is 11.2618303844
+The RMS error for joint bilateral filtering is 14.3510771287
+
+Time to complete: 36.4307129383

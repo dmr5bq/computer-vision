@@ -10,8 +10,8 @@ import gc
 """
     Constants and parameters:
 """
-THRESHOLD_LOW = 0.01
-THRESHOLD_HIGH = 0.1
+THRESHOLD_LOW = 0.005
+THRESHOLD_HIGH = 0.15
 
 NO_EDGE = 0.0
 WEAK_EDGE = 0.2
@@ -27,7 +27,7 @@ P_BLUE = 0.11
 
 OUTPATH = 'results/'
 PATH = 'assets/'
-FILENAME = 'flower.jpg'
+FILENAME = 'dom.jpg'
 OUTFILENAME = ('canny_result?hthreshold=%s&lthreshold=%s_' + FILENAME) % (THRESHOLD_HIGH, THRESHOLD_LOW)
 
 

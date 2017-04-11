@@ -10,19 +10,18 @@ import gc
 """
     Constants and parameters:
 """
-THRESHOLD = 0.1
+THRESHOLD = 2
 
 RED = 0
 GREEN = 1
 BLUE = 2
-
 P_RED = 0.30
 P_GREEN = 0.59
 P_BLUE = 0.11
 
 OUTPATH = 'results/'
 PATH = 'assets/'
-FILENAME = 'flower.jpg'
+FILENAME = 'dom.jpg'
 OUTFILENAME = ('harris_result?threshold=%s_' + FILENAME) % THRESHOLD
 
 gc.enable()
